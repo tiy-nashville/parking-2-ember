@@ -1,12 +1,12 @@
 <div class="container">
-  <h1>Parking Tracker</h1>
-  <form {{action search address on="submit"}}>
-    {{input class="form-input" type="text" value=address placeholder="Search location here"}}
-  </form>
-  {{#g-map lat=36.1627 lng=-86.7816 WmarkersFitMode='live' zoom=12 as |context|}}
-    {{#each addresses as |add|}}
-    {{g-map-address-marker context address=add}}
-    {{/each}}
-  {{/g-map}}
+  <div class="nav-row">
+    {{#link-to "main"}}
+    <h1 class="title">Parking Tracker</h1>
+    {{/link-to}}
+
+    {{#link-to "add"}}
+      <span class="fa fa-plus icon-plus"></span>
+    {{/link-to}}
+  </div>
 </div>
 {{outlet}}

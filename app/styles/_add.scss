@@ -1,0 +1,11 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.title {
+  color: $brand-green;
+  font-family: sans-serif;
+}

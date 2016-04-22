@@ -1,0 +1,10 @@
+<div class="container">
+  <form {{action search address on="submit"}}>
+    {{input class="form-input" type="text" value=address placeholder="Search location here"}}
+  </form>
+  {{#g-map lat=36.1627 lng=-86.7816 markersFitMode='live' zoom=12 as |context|}}
+    {{#each addresses as |add|}}
+      {{g-map-address-marker context address=add}}
+    {{/each}}
+  {{/g-map}}
+</div>
