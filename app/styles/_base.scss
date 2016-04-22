@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 60rem;
+  margin: auto;
+}
+
+.form-input {
+  width: 100%;
+  margin: $gutter 0;
+  padding: $gutter;
+  border: 1px solid black;
+}
