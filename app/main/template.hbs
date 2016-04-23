@@ -6,14 +6,16 @@
     {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
   </form>
 
-  {{log address zoom}}
-
-  <button {{action getData on="click"}}>Fetch Data</button>
+  {{!-- <button {{action getData on="click"}}>Fetch Data</button> --}}
   <button {{action getLocation on="click"}}>Get location</button>
 
-  {{#g-map lat=36.1627 lng=-86.7816 markersFitMode='live' zoom=zoom as |context|}}
+  {{#g-map lat=lat lng=lng zoom=zoom as |context|}}
     {{g-map-address-marker context address=address
       onLocationChange=(action "onLocationChangeHandler")}}
-    {{g-map-marker context lat=lat lng=lng}}
+    {{g-map-marker context lat=newlat lng=newlng}}
+
+    {{#each model as |spot|}}
+      {{g-map-address-marker context address=(make-address spot)}}
+    {{/each}}
   {{/g-map}}
 </div>

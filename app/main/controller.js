@@ -2,31 +2,31 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   address: ``,
-  lat: ``,
-  lng: ``,
+  lat: 36.1627,
+  lng: -86.7816,
   zoom: 12,
 
   search(value) {
-    this.incrementProperty(`zoom`, 1);
-    this.set(`address`, value);
-  },
-
-  getLocation() {
-    this.set(`lat`, ``);
-    this.set(`lng`, ``);
-
-    navigator.geolocation.getCurrentPosition((location) => {
-      this.set(`lat`, location.coords.latitude);
-      this.set(`lng`, location.coords.longitude);
+    this.set(`zoom`, ``);
+    const address = value;
+    // &key=YOUR_API_KEY
+    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}`;
+    fetch(url)
+    .then((results) => results.json())
+    .then((data) => {
+      const coords = data;
+      this.set(`lat`, coords.results[0].geometry.location.lat);
+      this.set(`lng`, coords.results[0].geometry.location.lng);
+      this.set(`zoom`, 16);
     });
   },
 
-  getData() {
-    fetch(`http://22c6fc86.ngrok.io/parking-spots`)
-    .then((results) => results.json())
-    .then((data) => {
-      console.log(data);
-      this.data = data;
+  getLocation() {
+    this.set(`zoom`, ``);
+    navigator.geolocation.getCurrentPosition((location) => {
+      this.set(`lat`, location.coords.latitude);
+      this.set(`lng`, location.coords.longitude);
+      this.set(`zoom`, 16);
     });
   },
 
