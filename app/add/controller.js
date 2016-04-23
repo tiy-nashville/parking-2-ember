@@ -8,8 +8,6 @@ export default Ember.Controller.extend({
       state: attrs.state,
     };
 
-    console.log(parking)
-
     fetch(`http://22c6fc86.ngrok.io/add-parking`, {
       method: `POST`,
       headers: {
@@ -17,6 +15,9 @@ export default Ember.Controller.extend({
         'Content-Type': `application/json`,
       },
       body: JSON.stringify(parking),
+    })
+    .then(() => {
+      this.transitionToRoute(`main`);
     });
   },
 });
