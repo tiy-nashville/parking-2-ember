@@ -1,12 +1,19 @@
 <div class="container">
   <h3>Search for parking</h3>
 
-  <form {{action search address on="submit"}}>
-    {{input class="form-input" type="text" value=address placeholder="Search location here"}}
+
+  <form {{action search formValue on="submit"}}>
+    {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
   </form>
-  {{#g-map lat=lat lng=lng markersFitMode='live' zoom=12 as |context|}}
-    {{#each addresses as |add|}}
-      {{g-map-address-marker context address=add}}
-    {{/each}}
+
+  {{log address zoom}}
+
+  <button {{action getData on="click"}}>Fetch Data</button>
+  <button {{action getLocation on="click"}}>Get location</button>
+
+  {{#g-map lat=36.1627 lng=-86.7816 markersFitMode='live' zoom=zoom as |context|}}
+    {{g-map-address-marker context address=address
+      onLocationChange=(action "onLocationChangeHandler")}}
+    {{g-map-marker context lat=lat lng=lng}}
   {{/g-map}}
 </div>

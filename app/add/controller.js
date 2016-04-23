@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 
     console.log(parking)
 
-    fetch(`http://22c6fc86.ngrok.io/addresses`, {
+    fetch(`http://22c6fc86.ngrok.io/add-parking`, {
       method: `POST`,
       headers: {
         Accept: `application/json`,
