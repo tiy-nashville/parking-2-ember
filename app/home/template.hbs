@@ -1,65 +1,81 @@
-
 <div class="home-header">
 
 </div>
 
 <div class="map-container">
-  <div class="map-area"></div>
-      <div class="input-area">
-        <div class="location-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+  <div class="map-area">
+    {{#g-map lat=lat lng=lng zoom=zoom as |context|}}
 
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">State</label>
-          </div>
+      {{#g-map-marker context lat=lat lng=lng as |markerContext|}}
+        {{g-map-infowindow markerContext openOn="dblclick" title="Blockless form 2"}}
+      {{/g-map-marker}}
 
-          <div>
-            <input class="input-info" type="text" name="" placeholder="Enter State">
-          </div>
-        </div>
+      {{#each model as |spot|}}
+        {{#g-map-address-marker context address=(make-address spot) as |markerContext|}}
+          {{#g-map-infowindow markerContext openOn="dblclick" }}
+            <h4>{{spot.street}}, {{spot.city}} {{spot.state}}</h4>
+          {{/g-map-infowindow}}
+        {{/g-map-address-marker}}
+      {{/each}}
 
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">City</label>
-          </div>
-
-          <div>
-            <input class="input-info" type="text" name="" placeholder="Enter City">
-          </div>
-        </div>
-
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">Street</label>
-          </div>
-
-          <div>
-            <input class="input-info" type="text" name="" placeholder="Enter Street">
-          </div>
-        </div>
-
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">Zipcode</label>
-          </div>
-
-          <div>
-            <input class="input-info" type="text" name="" placeholder="Enter Zipcode">
-          </div>
-        </div>
-
-        <div class="hi-top"><p>Let The Iron Yard.com be your guide to discount parking in Nashville.
-          With over 30 parking garages in Nashville.</p></div>
-
-     </div>
+    {{/g-map}}
   </div>
+  <div class="input-area">
+    <div class="location-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
 
-  <div class="home-bottom">
-    {{#link-to 'about' class="home-bottom__links"}}ABOUT{{/link-to}}
-    {{#link-to 'contact' class="home-bottom__links"}}CONTACT{{/link-to}}
+    <div class="input-container">
+      <div>
+        <label class="label-name" for="">State</label>
+      </div>
 
-    <p class="copyright">Copyright © 2016, Team A EMBER, THE IRON YARD.</p>
+      <div>
+        <input class="input-info" type="text" name="" placeholder="Enter State">
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div>
+        <label class="label-name" for="">City</label>
+      </div>
+
+      <div>
+        <input class="input-info" type="text" name="" placeholder="Enter City">
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div>
+        <label class="label-name" for="">Street</label>
+      </div>
+
+      <div>
+        <input class="input-info" type="text" name="" placeholder="Enter Street">
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div>
+        <label class="label-name" for="">Zipcode</label>
+      </div>
+
+      <div>
+        <input class="input-info" type="text" name="" placeholder="Enter Zipcode">
+      </div>
+    </div>
+
+    <div class="hi-top">
+      <p>Let The Iron Yard.com be your guide to discount parking in Nashville. With over 30 parking garages in Nashville.</p>
+    </div>
+
   </div>
+</div>
+
+<div class="home-bottom">
+  {{#link-to 'about' class="home-bottom__links" }}ABOUT{{/link-to}}
+  {{#link-to 'contact' class="home-bottom__links" }}CONTACT{{/link-to}}
+
+  <p class="copyright">Copyright © 2016, Team A EMBER, THE IRON YARD.</p>
+</div>
 
 
 

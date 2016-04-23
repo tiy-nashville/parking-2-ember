@@ -24,21 +24,5 @@
 
     {{!-- <button {{action getData on="click"}}>Fetch Data</button> --}}
     <button class="current-location"{{action getLocation on="click"}}>Find My Location</button>
-
-    {{#g-map lat=lat lng=lng zoom=zoom as |context|}}
-
-    {{#g-map-marker context lat=lat lng=lng as |markerContext|}}
-      {{g-map-infowindow markerContext openOn="dblclick" title="Blockless form 2"}}
-    {{/g-map-marker}}
-
-      {{#each model as |spot|}}
-        {{#g-map-address-marker context address=(make-address spot) as |markerContext|}}
-          {{#g-map-infowindow markerContext openOn="dblclick"}}
-            <h4>{{spot.street}}, {{spot.city}} {{spot.state}}</h4>
-          {{/g-map-infowindow}}
-        {{/g-map-address-marker}}
-      {{/each}}
-
-    {{/g-map}}
   </div>
 </div>
