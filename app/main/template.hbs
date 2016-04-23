@@ -1,27 +1,44 @@
-<div class="container">
-  <h3 class="sub-title">Search for parking by location:</h3>
+<div class="add-new-wrapper">
+  <div class="container">
+    <div class="title-container">
+      <h2 class="title">Add a New Parking Spot</h2>
+
+      <form {{action addParking model on="submit"}}>
+        {{input class="add-new-input" type="text" placeholder="Street Address" value=model.street}}
+        {{input class="add-new-input" type="text" placeholder="City" value=model.city}}
+        {{input class="add-new-input" type="text" placeholder="State" maxlength="2" value=model.state}}
+        <button class="add-new-button">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="map-wrapper">
+  <div class="container">
+    <h3 class="sub-title">Search for parking by location:</h3>
 
 
-  <form {{action search formValue on="submit"}}>
-    {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
-  </form>
+    <form {{action search formValue on="submit"}}>
+      {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
+    </form>
 
-  {{!-- <button {{action getData on="click"}}>Fetch Data</button> --}}
-  <button class="current-location"{{action getLocation on="click"}}>Find My Location</button>
+    {{!-- <button {{action getData on="click"}}>Fetch Data</button> --}}
+    <button class="current-location"{{action getLocation on="click"}}>Find My Location</button>
 
-  {{#g-map lat=lat lng=lng zoom=zoom as |context|}}
+    {{#g-map lat=lat lng=lng zoom=zoom as |context|}}
 
-  {{#g-map-marker context lat=lat lng=lng as |markerContext|}}
-    {{g-map-infowindow markerContext openOn="dblclick" title="Blockless form 2"}}
-  {{/g-map-marker}}
+    {{#g-map-marker context lat=lat lng=lng as |markerContext|}}
+      {{g-map-infowindow markerContext openOn="dblclick" title="Blockless form 2"}}
+    {{/g-map-marker}}
 
-    {{#each model as |spot|}}
-      {{#g-map-address-marker context address=(make-address spot) as |markerContext|}}
-        {{#g-map-infowindow markerContext openOn="dblclick"}}
-          <h4>{{spot.street}}, {{spot.city}} {{spot.state}}</h4>
-        {{/g-map-infowindow}}
-      {{/g-map-address-marker}}
-    {{/each}}
+      {{#each model as |spot|}}
+        {{#g-map-address-marker context address=(make-address spot) as |markerContext|}}
+          {{#g-map-infowindow markerContext openOn="dblclick"}}
+            <h4>{{spot.street}}, {{spot.city}} {{spot.state}}</h4>
+          {{/g-map-infowindow}}
+        {{/g-map-address-marker}}
+      {{/each}}
 
-  {{/g-map}}
+    {{/g-map}}
+  </div>
 </div>

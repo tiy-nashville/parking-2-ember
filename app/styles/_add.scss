@@ -1,3 +1,15 @@
+.add-new-wrapper {
+  position: absolute;
+  top: -18rem;
+  width: 100%;
+  padding-bottom: 10rem;
+  background: white;
+}
+
+.toggle {
+  top: 5rem;
+}
+
 .title-container {
   display: flex;
   flex-direction: column;
@@ -8,4 +20,18 @@
 .title {
   color: $brand-green;
   font-family: sans-serif;
+}
+
+.add-new {
+  &-input {
+    padding: $gutter;
+  }
+
+  &-button {
+    padding: $gutter $gutter * 2;
+    border: 0;
+    background: $brand-dark-blue;
+    color: $brand-green;
+    font-weight: bolder;
+  }
 }
