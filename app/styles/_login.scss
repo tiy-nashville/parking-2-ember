@@ -1,0 +1,71 @@
+.main-top {
+  margin: 0;
+}
+
+.icon-container {
+  height: 28vh;
+  padding: 3em 0;
+  background-image: url('/parking_image1.jpg');
+  background-size: cover;
+  font-family: Arial Rounded MT Bold;
+}
+
+.car-icon {
+  display: flex;
+  justify-content: center;
+  color: yellow;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: none;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: center;
+  color: yellow;
+  font-size: 2em;
+}
+
+.main-bottom {
+  display: flex;
+  justify-content: center;
+  background-color: #282C34;
+}
+
+.input-label {
+  color: white;
+  margin: 1em 0 0 0.8em;
+}
+
+.main-bottom__input {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  font-family: sans-serif;
+  width: 60%;
+}
+
+.main-bottom__container {
+  font-family: sans-serif;
+  margin: 4em;
+  color: white;
+  border: 2px solid white;
+  width: 25%;
+  border-radius: 0.4em;
+}
+
+.send-button {
+ margin-left: 1em;
+ margin-bottom: 0.5em;
+}
+
+.input-container__top {
+ margin-top: 1em;
+}
+
+.input-container {
+  padding: 2em;
+}
