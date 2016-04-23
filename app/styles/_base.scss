@@ -22,6 +22,12 @@ body {
   }
 }
 
+.sub-title {
+  margin: 0;
+  color: $brand-green;
+  font-family: sans-serif;
+}
+
 .icon-plus {
   margin: $gutter;
   padding: $gutter;
@@ -33,11 +39,12 @@ body {
 .container {
   max-width: 60rem;
   margin: auto;
+  padding: 0 $gutter;
 }
 
 .form-input {
   width: 100%;
-  margin: $gutter 0;
+  margin: 0;
   padding: $gutter;
   border: 1px solid $brand-dark-blue;
 }

@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
   lat: 36.1627,
   lng: -86.7816,
   zoom: 12,
+  formValue: ``,
 
   search(value) {
     this.set(`zoom`, ``);
@@ -19,6 +20,7 @@ export default Ember.Controller.extend({
       this.set(`lng`, coords.results[0].geometry.location.lng);
       this.set(`zoom`, 16);
     });
+    this.set(`formValue`, ``);
   },
 
   getLocation() {
