@@ -1,4 +1,4 @@
-<div class="map-container">
+
   <div class="container">
     <h3 class="sub-title">Search for parking by location:</h3>
 
@@ -9,7 +9,6 @@
 
     <button class="current-location"{{action getLocation on="click"}}>Find My Location</button>
   </div>
-</div>
 
 <div class="main-content-container">
   <div class="container">
@@ -75,11 +74,23 @@
   </div>
 </div>
 
-<div class="home-bottom">
-  {{#link-to 'about' class="home-bottom__links" }}ABOUT{{/link-to}}
-  {{#link-to 'contact' class="home-bottom__links" }}CONTACT{{/link-to}}
+<div class="footer-wrapper">
+  <div class="container">
+      <div class="footer-row">
+        <ul class="footer-links">
+          <li class="home-bottom__links">
+            {{#link-to 'about'}}ABOUT{{/link-to}}
+          </li>
+          <li class="home-bottom__links">
+            {{#link-to 'contact'}}CONTACT{{/link-to}}
+          </li>
+        </ul>
 
-  <p class="copyright">Copyright © 2016, Team A EMBER, THE IRON YARD.</p>
+        <div class="footer-copyright">
+          <p class="copyright">Copyright © 2016, Team A EMBER, THE IRON YARD.</p>
+        </div>
+      </div>
+  </div>
 </div>
 
 

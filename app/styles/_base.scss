@@ -1,9 +1,15 @@
 * {
+  font-family: sans-serif;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 .nav-row {
