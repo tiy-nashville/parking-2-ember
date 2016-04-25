@@ -1,32 +1,31 @@
-body {
-  margin: 0;
-}
-
 .home-header {
   height: 50vh;
-  padding: 3em 0;
+  padding: $gutter;
   background-image: url('/home-header.jpg');
   background-size: cover;
-
 }
 
-.map-container {
+.main-content-container {
+  width: 100%;
+  background: $brand-light-blue;
+}
+
+.map-row {
+  width: 100%;
   display: flex;
-  background-color: #86C6FF;
-  padding: 1em 2em 4em 1em;
 }
 
 .map-area {
-  width: 100%;
+  padding: $gutter;
+  flex-grow: 1;
 }
 
 .input-area {
+  margin: $gutter;
   background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQNlC3xsuR7gNrZM4Qv9TIKjy0NKOAkANIm0rYj-pK7omq62Edu');
-  width: 35%;
-  margin-left: 1em;
-  border-radius: 0.3em;
+  flex-basis: 15rem;
+  border-radius: 0.3rem;
   box-shadow: 0 0 1em 0em;
-  height: 50%;
 }
 
 .input-container {
