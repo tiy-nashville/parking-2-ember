@@ -7,28 +7,8 @@ export default Ember.Controller.extend({
   zoom: 12,
   formValue: ``,
 
-  addParking(attrs) {
-    const parking = {
-      street: attrs.street,
-      city: attrs.city,
-      state: attrs.state,
-    };
-
-    fetch(`http://58abc252.ngrok.io/add-parking`, {
-      method: `POST`,
-      headers: {
-        Accept: `application/json`,
-        'Content-Type': `application/json`,
-      },
-      body: JSON.stringify(parking),
-    })
-    .then(() => {
-      this.transitionToRoute(`main`);
-    });
-  },
-
   search(value) {
-    this.set(`zoom`, ``);
+    this.incrementProperty(`zoom`, 0.01);
     const address = value;
     // &key=YOUR_API_KEY
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}`;
@@ -57,5 +37,25 @@ export default Ember.Controller.extend({
       Ember.Logger.log(`lat: ${lat}, lng: ${lng}`);
       Ember.Logger.debug(results);
     },
+  },
+
+  addParking(attrs) {
+    const parking = {
+      street: attrs.street,
+      city: attrs.city,
+      state: attrs.state,
+    };
+
+    fetch(`http://58abc252.ngrok.io/add-parking`, {
+      method: `POST`,
+      headers: {
+        Accept: `application/json`,
+        'Content-Type': `application/json`,
+      },
+      body: JSON.stringify(parking),
+    })
+    .then(() => {
+      this.transitionToRoute(`main`);
+    });
   },
 });

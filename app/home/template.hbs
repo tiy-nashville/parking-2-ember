@@ -1,5 +1,15 @@
-<div class="home-header">
+<div class="map-container">
+  <div class="container">
+    <h3 class="sub-title">Search for parking by location:</h3>
 
+
+    <form {{action search formValue on="submit"}}>
+      {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
+    </form>
+
+    {{!-- <button {{action getData on="click"}}>Fetch Data</button> --}}
+    <button class="current-location"{{action getLocation on="click"}}>Find My Location</button>
+  </div>
 </div>
 
 <div class="map-container">
@@ -20,7 +30,7 @@
 
     {{/g-map}}
   </div>
-  <div class="input-area">
+  <form {{action addParking model on="submit"}} class="input-area">
     <div class="location-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
 
     <div class="input-container">
@@ -29,7 +39,7 @@
       </div>
 
       <div>
-        <input class="input-info" type="text" name="" placeholder="Enter State">
+        {{input class="input-info" type="text" name="" placeholder="Enter State" value=model.state}}
       </div>
     </div>
 
@@ -39,7 +49,7 @@
       </div>
 
       <div>
-        <input class="input-info" type="text" name="" placeholder="Enter City">
+        {{input class="input-info" type="text" name="" placeholder="Enter City" value=model.city}}
       </div>
     </div>
 
@@ -49,25 +59,17 @@
       </div>
 
       <div>
-        <input class="input-info" type="text" name="" placeholder="Enter Street">
+        {{input class="input-info" type="text" name="" placeholder="Enter Street" value=model.street}}
       </div>
     </div>
 
-    <div class="input-container">
-      <div>
-        <label class="label-name" for="">Zipcode</label>
-      </div>
-
-      <div>
-        <input class="input-info" type="text" name="" placeholder="Enter Zipcode">
-      </div>
-    </div>
+    <button>Add new parking</button>
 
     <div class="hi-top">
       <p>Let The Iron Yard.com be your guide to discount parking in Nashville. With over 30 parking garages in Nashville.</p>
     </div>
 
-  </div>
+  </form>
 </div>
 
 <div class="home-bottom">
