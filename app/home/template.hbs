@@ -30,40 +30,29 @@
 
         {{/g-map}}
       </div>
-      <form {{action addParking model on="submit"}} class="input-area">
-        <div class="location-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">State</label>
-          </div>
-
-          <div>
-            {{input class="input-info" type="text" name="" placeholder="Enter State" value=model.state}}
-          </div>
+      <form {{action addParking model on="submit"}} class="form-area">
+        <div class="location-icon">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
         </div>
 
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">City</label>
+        <div class="form-input-container">
+          <div class="input-container">
+              <label class="label-name" for="">State</label>
+              {{input class="form-input" type="text" name="" placeholder="Enter State" value=model.state}}
           </div>
 
-          <div>
-            {{input class="input-info" type="text" name="" placeholder="Enter City" value=model.city}}
+          <div class="input-container">
+              <label class="label-name" for="">City</label>
+              {{input class="form-input" type="text" name="" placeholder="Enter City" value=model.city}}
           </div>
+
+          <div class="input-container">
+              <label class="label-name" for="">Street</label>
+              {{input class="form-input" type="text" name="" placeholder="Enter Street" value=model.street}}
+          </div>
+
+          <button>Add new parking</button>
         </div>
-
-        <div class="input-container">
-          <div>
-            <label class="label-name" for="">Street</label>
-          </div>
-
-          <div>
-            {{input class="input-info" type="text" name="" placeholder="Enter Street" value=model.street}}
-          </div>
-        </div>
-
-        <button>Add new parking</button>
 
         <div class="hi-top">
           <p>Let The Iron Yard.com be your guide to discount parking in Nashville. With over 30 parking garages in Nashville.</p>

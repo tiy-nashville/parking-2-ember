@@ -12,48 +12,58 @@
 }
 
 .map-row {
-  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .map-area {
-  padding: $gutter;
+  flex-basis: 40rem;
   flex-grow: 1;
+  flex-shrink: 1;
+  padding: $gutter;
 }
 
 .hi-top {
-  margin: $gutter;
-  padding: $gutter;
+  margin-top: $gutter;
+  padding: $gutter / 2 $gutter;
   border-radius: 0.3rem;
   background-color: $brand-dark-blue;
   color: $brand-light-blue;
 }
 
-.input-area {
-  margin: $gutter;
-  background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQNlC3xsuR7gNrZM4Qv9TIKjy0NKOAkANIm0rYj-pK7omq62Edu');
+.location-icon {
+  text-align: center;
+}
+
+.form-area {
   flex-basis: 15rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin: $gutter;
+  padding: $gutter;
   border-radius: 0.3rem;
-  box-shadow: 0 0 1em 0em;
+  background-image: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQNlC3xsuR7gNrZM4Qv9TIKjy0NKOAkANIm0rYj-pK7omq62Edu');
+  box-shadow: 0 0 1em 0;
+}
+
+.form-input-container {
+  max-width: 30rem;
+  margin: auto;
 }
 
 .input-container {
-  // margin-left: 0.5em;
+  margin-bottom: $gutter;
   padding: 0;
 }
 
-.location-icon {
-  padding: 1em;
-}
 
 .label-name {
-  margin-left: 0.7em;
+  color: $brand-dark-blue;
 }
 
 .input-info {
-  margin: 1em;
-  width: 70%;
-  overflow: visible;
+  width: 100%;
 }
 
 .map-info {
