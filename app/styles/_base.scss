@@ -12,41 +12,9 @@ ul {
   list-style: none;
 }
 
-.nav-row {
-  display: flex;
-  justify-content: space-between;
-
-  .title {
-    border-bottom: $brand-green 4px solid;
-    color: $brand-dark-blue;
-    font-family: sans-serif;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
-
-.sub-title {
-  margin: 0;
-  color: $brand-green;
-  font-family: sans-serif;
-}
-
-.icon-plus {
-  margin: $gutter;
-  padding: $gutter;
-  border-radius: 50%;
-  background: $brand-dark-blue;
-  color: $brand-green;
-}
-
 .container {
-  width: 100%;
   max-width: 60rem;
   margin: auto;
-  padding: 0 $gutter;
 }
 
 .form-input {

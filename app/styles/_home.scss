@@ -1,20 +1,41 @@
 .home-header {
-  height: 50vh;
-  padding: $gutter;
+  background: $brand-light-blue-trans;
+  overflow: auto;
+}
+
+.search-container {
+  padding: 0 $gutter;
   background: $brand-dark-blue;
-  background-image: url('/home-header.jpg');
-  background-size: cover;
+  overflow: auto;
+}
+
+.sub-title {
+  margin: 0;
+  margin-top: $gutter;
+  color: $brand-green;
+  font-family: sans-serif;
+}
+
+.current-location-button {
+  padding: $gutter;
+  border: 0;
+  border-radius: 4px;
+  background: $brand-dark-blue;
+  color: $brand-green;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .main-content-container {
   width: 100%;
-  background: $brand-light-blue;
+  background: $brand-light-blue-trans;
 }
 
 .map-row {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  background: $brand-dark-blue;
 }
 
 .map-area {
@@ -71,7 +92,7 @@
 }
 
 .footer-wrapper {
-  background-color: #C8C8C8;
+  background-color: $brand-grey;
 }
 
 .footer-row {
@@ -95,7 +116,7 @@
 }
 
 .copyright {
+  align-self: center;
   color: $brand-dark-blue;
   font-size: 0.8rem;
-  align-self: center;
 }

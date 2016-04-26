@@ -1,14 +1,18 @@
 
+<div class="home-header">
   <div class="container">
-    <h3 class="sub-title">Search for parking by location:</h3>
+    <div class="search-container">
+      <h3 class="sub-title">Search for parking by location:</h3>
 
 
-    <form {{action search formValue on="submit"}}>
-      {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
-    </form>
+      <form {{action search formValue on="submit"}}>
+        {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
+      </form>
 
-    <button class="current-location"{{action getLocation on="click"}}>Find My Location</button>
+      <button class="current-location-button"{{action getLocation on="click"}}>Find My Location</button>
+    </div>
   </div>
+</div>
 
 <div class="main-content-container">
   <div class="container">

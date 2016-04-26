@@ -7,3 +7,26 @@
 @import 'about';
 @import 'home';
 @import 'contact';
+
+.nav-wrapper {
+  background: $brand-dark-blue;
+  overflow: auto;
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    margin: 0 $gutter;
+    margin-top: $gutter;
+    border-bottom: $brand-green 4px solid;
+    color: $brand-grey;
+    font-family: sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
