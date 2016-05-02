@@ -10,6 +10,9 @@
 
 .nav-wrapper {
   background: $brand-dark-blue;
+  background-image: url('/parking_image.jpg');
+  background-position: center;
+  background-size: cover;
   overflow: auto;
 }
 
@@ -18,10 +21,9 @@
   justify-content: space-between;
 
   .title {
-    margin: 0 $gutter;
-    margin-top: $gutter;
+    margin: $gutter * 2 $gutter;
     border-bottom: $brand-green 4px solid;
-    color: $brand-grey;
+    color: $brand-dark-blue;
     font-family: sans-serif;
   }
 

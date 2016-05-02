@@ -4,5 +4,6 @@ import attr from 'ember-data/attr';
 export default Model.extend({
   street: attr(),
   city: attr(),
-  state: attr()
+  state: attr(),
+  img: attr(`image`),
 });

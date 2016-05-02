@@ -2,14 +2,16 @@
 <div class="home-header">
   <div class="container">
     <div class="search-container">
-      <h3 class="sub-title">Search for parking by location:</h3>
+      <div class="search-container-row">
+        <h3 class="sub-title">Search for parking by location:</h3>
 
+        <button class="current-location-button"{{action getLocation on="click"}}>Find My Location</button>
+      </div>
 
       <form {{action search formValue on="submit"}}>
         {{input class="form-input" type="text" value=formValue placeholder="Search location here"}}
       </form>
 
-      <button class="current-location-button"{{action getLocation on="click"}}>Find My Location</button>
     </div>
   </div>
 </div>
@@ -53,6 +55,11 @@
           <div class="input-container">
               <label class="label-name" for="">Street</label>
               {{input class="form-input" type="text" name="" placeholder="Enter Street" value=model.street}}
+          </div>
+
+          <div class="input-container">
+              <label class="label-name" for="">Upload Image</label>
+              {{input type="file" accept="image/*" capture="camera" value=model.image}}
           </div>
 
           <button>Add new parking</button>
